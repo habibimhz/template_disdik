@@ -1,0 +1,782 @@
+/* ==================================================
+   ROOT VARIABLES
+   ================================================== */
+:root {
+  --primary-ciamis: #5e2d91;
+  --primary-dark: #3a1c5e;
+  --secondary-gold: #fdb813;
+  --accent-yellow: var(--secondary-gold);
+  --text-light: #f8f9fa;
+}
+.text-purple {
+  color: var(--primary-ciamis) !important;
+}
+.btn-purple {
+  background-color: var(--primary-ciamis);
+  color: #fff !important;
+  border: none;
+}
+
+.btn-purple:hover,
+.btn-purple:focus {
+  background-color: var(--primary-dark);
+  color: #fff !important;
+}
+.bg-purple {
+  background-color: var(--primary-ciamis) !important;
+}
+
+/* ==================================================
+   BASE
+   ================================================== */
+body {
+  font-family: 'Inter', sans-serif;
+  padding-top: 0;
+}
+.border-ciamis {
+  border-color: var(--primary-ciamis) !important;
+}
+
+.hover-opacity-100:hover {
+  opacity: 1 !important;
+}
+
+/* ==================================================
+   TOP BAR
+   ================================================== */
+.top-bar {
+  background: linear-gradient(90deg, var(--primary-ciamis) 0%, var(--primary-dark) 100%);
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  color: var(--text-light);
+}
+
+.running-text-container {
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.running-text {
+  font-weight: 500;
+}
+
+/* ==================================================
+   NAVBAR
+   ================================================== */
+.navbar {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 12px 0;
+  transition: all 0.3s ease;
+}
+
+/* Brand */
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ==================================================
+   NAV LINKS
+   ================================================== */
+.navbar .navbar-nav .nav-link {
+  color: #333;
+  font-weight: 500;
+  padding: 0.5rem 1.2rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+  color: var(--primary-ciamis);
+}
+
+/* ==================================================
+   UNDERLINE HOVER (NON-DROPDOWN)
+   ================================================== */
+.navbar .nav-item:not(.dropdown) .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent-yellow);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar .nav-item:not(.dropdown) .nav-link:hover::after,
+.navbar .nav-item:not(.dropdown) .nav-link.active::after {
+  width: 60%;
+}
+
+/* ==================================================
+   DROPDOWN
+   ================================================== */
+.dropdown-menu {
+  border: none;
+  border-top: 3px solid var(--accent-yellow);
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: dropdownFade 0.25s ease;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #f4f7ff;
+  color: var(--primary-ciamis);
+  transform: translateX(4px);
+}
+
+/* ==================================================
+   SEARCH BUTTON
+   ================================================== */
+.btn-search-nav {
+  background: var(--primary-ciamis);
+  color: #fff;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.btn-search-nav:hover {
+  background: var(--accent-yellow);
+  color: #333;
+  transform: scale(1.05);
+}
+
+/* ==================================================
+   RESPONSIVE TWEAKS
+   ================================================== */
+@media (max-width: 991.98px) {
+  .navbar {
+    padding: 8px 0;
+  }
+
+  .navbar .navbar-nav .nav-link {
+    padding: 0.6rem 1rem;
+  }
+
+  .navbar .nav-item:not(.dropdown) .nav-link::after {
+    display: none;
+  }
+}
+
+/* 1. Hero Section - Background Artistik */
+.hero-section {
+  position: relative;
+  padding: 100px 0 240px;
+  /* Warna dasar Ungu Ciamis */
+  background-color: var(--primary-ciamis);
+
+  /* Layer 1 & 2: Cahaya Radial Ungu Terang & Ungu Gelap */
+  background-image: radial-gradient(at 10% 20%, rgba(94, 45, 145, 0.8) 0px, transparent 45%), radial-gradient(at 90% 80%, rgba(58, 28, 94, 0.9) 0px, transparent 45%),
+    /* Layer 3: Texture Carbon untuk kesan mewah */ url('https://www.transparenttextures.com/patterns/carbon-fibre.png'), /* Layer 4: Overlay Ungu Gelap untuk kontras teks */ linear-gradient(rgba(58, 28, 94, 0.6), rgba(58, 28, 94, 0.6)),
+    /* Layer 5: Background Image Utama */ url('https://images.unsplash.com/photo-1523050853063-913ec98970ce?q=80&w=1470');
+
+  background-size: cover, cover, auto, cover, cover;
+  background-attachment: fixed;
+
+  /* Blend mode untuk menyatukan tekstur, warna, dan gambar */
+  background-blend-mode: screen, normal, soft-light, multiply, normal;
+  overflow: hidden;
+}
+
+/* Glassmorphism Badge */
+.custom-badge {
+  background: rgba(255, 193, 7, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* 2. Kadis Card - Luxury Effect */
+.kadis-card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 40px !important; /* Lebih melengkung agar modern */
+  transform: translateY(-80px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-bottom: -60px;
+}
+
+.kadis-card:hover {
+  transform: translateY(-130px) scale(1.02);
+}
+
+/* Border Animasi untuk Foto Kadis */
+.kadis-img-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: -110px auto 30px;
+}
+
+.kadis-img-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, var(--accent-gold), transparent, var(--accent-gold));
+  border-radius: 50%;
+  animation: rotateBorder 4s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotateBorder {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.kadis-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+/* Typography */
+.hero-title {
+  line-height: 1.1;
+  margin-top: 10px;
+}
+
+/* Floating Particles */
+.particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.stat-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+  position: relative;
+}
+
+/* Card Container */
+.stat-card {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(13, 110, 253, 0.1) !important;
+  border-color: rgba(13, 110, 253, 0.2);
+}
+
+/* Icon Box dengan Glassmorphism effect */
+.stat-icon-box {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: #f0f7ff;
+  color: #5e2d91;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-icon-box {
+  background: #5e2d91;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Typography */
+.counter {
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+  margin-bottom: 5px;
+  background: linear-gradient(45deg, #3a1c5e, #5e2d91);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+/* Dekorasi Background (Opsional) */
+.stat-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#5e2d91 0.5px, transparent 0.5px);
+  background-size: 20px 20px;
+  opacity: 0.05;
+  z-index: 0;
+}
+/* Styling Layanan Umum */
+.service-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+  border-color: var(--bs-primary);
+}
+
+.service-icon-wrapper {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f7ff;
+  border-radius: 14px;
+  color: #5e2d91;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+}
+
+.service-card:hover .service-icon-wrapper {
+  background: #5e2d91;
+  color: white;
+}
+
+/* Styling Sidebar GTK */
+.gtk-portal-card {
+  background: linear-gradient(145deg, #ffffff, #fdfdfd);
+  position: sticky;
+  top: 20px;
+}
+
+.gtk-btn {
+  border: 1px solid #e9ecef;
+  background: #fff;
+  padding: 12px 15px;
+  border-radius: 10px;
+  transition: all 0.2s;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #495057;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.gtk-btn:hover {
+  background: #f8f9fa;
+  border-color: #5e2d91;
+  color: #5e2d91;
+  padding-left: 20px;
+}
+
+.gtk-btn i {
+  font-size: 1.1rem;
+  color: #adb5bd;
+  transition: color 0.2s;
+}
+
+.gtk-btn:hover i {
+  color: #5e2d91;
+}
+
+.section-title-line {
+  width: 60px;
+  height: 4px;
+  background: #ffc107;
+  border-radius: 2px;
+  margin-bottom: 25px;
+}
+.transparency-section {
+  background-color: #fcfcfc;
+}
+
+/* Grid yang fleksibel */
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.doc-card {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #e2e8f0 !important;
+  background: white !important;
+  padding: 16px !important;
+  border-radius: 12px !important;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: #334155 !important;
+}
+
+.doc-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: #5e2d91 !important;
+}
+
+/* Icon Lingkaran */
+.icon-box {
+  width: 45px;
+  height: 45px;
+  background: #fff5f5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.doc-card i {
+  font-size: 1.4rem;
+  color: #dc3545;
+}
+
+.doc-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.doc-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.doc-meta {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.btn-all-docs {
+  border-radius: 50px;
+  padding: 10px 24px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+/* News Section Styling */
+.news-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px !important;
+  background: #fff;
+}
+
+.news-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Image Handling */
+.img-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.main-news-img {
+  height: 100%;
+  min-height: 250px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.sub-news-img {
+  width: 100%;
+  height: 180px; /* Tinggi tetap agar sejajar */
+  object-fit: cover;
+  border-radius: 15px; /* Memberi jarak dalam kartu */
+  transition: transform 0.6s ease;
+}
+
+.news-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Agenda Styling */
+/* Menyesuaikan badge tanggal agar teks benar-benar di tengah */
+.date-badge {
+  background: #f8faff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  width: 65px; /* Lebar tetap agar seragam */
+  height: 65px; /* Tinggi tetap agar menjadi kotak/bulat sempurna */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* Mencegah kotak tanggal gepeng jika teks judul panjang */
+}
+
+/* Menghilangkan margin bawah default pada angka tanggal */
+.date-badge .fs-4 {
+  line-height: 1;
+  margin: 0;
+}
+
+/* Styling tambahan agar agenda item lebih lega */
+.agenda-item {
+  transition: all 0.3s ease;
+  border-left: 5px solid transparent !important;
+}
+
+.agenda-item:hover {
+  background-color: #f0f7ff;
+  border-left: 5px solid var(--primary-ciamis) !important;
+  padding-left: 1.5rem !important;
+}
+
+.date-badge {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  min-width: 65px;
+  border: 1px solid #eee !important;
+}
+
+.news-title-link {
+  color: #1a1a1a;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+.partner-section {
+  padding: 60px 0;
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+}
+
+.partner-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.partner-link {
+  display: block;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+.partner-link:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.partner-logo {
+  height: 60px; /* Ukuran lebih konsisten */
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+.ls-2 {
+  letter-spacing: 2px;
+}
+
+footer {
+  background-color: #1a1a1a; /* Warna gelap elegan */
+  padding-top: 80px;
+  color: #e0e0e0;
+}
+
+.footer-title {
+  color: #ffffff;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-top: 15px;
+}
+
+.footer-subtitle {
+  font-size: 0.85rem;
+  color: #a0a0a0;
+  line-height: 1.8;
+}
+
+/* Social Button Styling */
+.social-btn {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-btn:hover {
+  background: var(--primary-ciamis, #0052a3);
+  color: white;
+  transform: translateY(-3px);
+  border-color: transparent;
+}
+
+/* Link Styling */
+.footer-link {
+  color: #a0a0a0;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: #ffc107; /* Warna emas/kuning saat hover */
+  padding-left: 5px;
+}
+
+.footer-section-title {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.footer-section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30px;
+  height: 2px;
+  background: #ffc107;
+}
+
+.map-container {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+}
+/* === Footer Bottom === */
+.footer-bottom {
+  background-color: #0d0d0d;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-text {
+  color: #adb5bd;
+}
+
+.footer-separator {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-links {
+  color: #adb5bd;
+}
+
+.footer-link {
+  color: #373737;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--bs-warning);
+}
+/* Menambahkan efek hover halus untuk link di copyright */
+.hover-warning:hover {
+  color: #ffc107 !important;
+}
+.transition-all {
+  transition: all 0.3s ease;
+}
+#btn-back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none; /* Sembunyi di awal */
+  width: 50px;
+  height: 50px;
+  border-radius: 12px; /* Kotak membulat lebih modern dibanding bulat sempurna */
+  z-index: 999;
+  background-color: var(--accent-gold, #ffc107);
+  color: #000;
+  border: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.3);
+}
+
+#btn-back-to-top:hover {
+  transform: translateY(-5px);
+  background-color: #e5ac00;
+  box-shadow: 0 15px 25px rgba(255, 193, 7, 0.4);
+}
+
+#btn-back-to-top i {
+  font-size: 1.2rem;
+}
+
+/* Animasi muncul */
+.fade-in-up {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

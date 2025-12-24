@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portal Resmi Dinas Pendidikan Kabupaten Ciamis - Layanan digital, transparansi data, GTK, dan informasi pendidikan." />
+    <meta name="keywords" content="Dinas Pendidikan Ciamis, PPDB Ciamis, GTK Ciamis, Data Dapodik, Pendidikan Jawa Barat" />
+    <meta name="author" content="Disdik Ciamis" />
+    <title>Dinas Pendidikan Kab. Ciamis - Galuh Cerdas</title>
+
+    <!-- Preconnects for performance -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./dist/css/custom.css" />
+  </head>
+
+  <body>
+    <!-- ================= TOP BAR ================= -->
+    <div class="top-bar shadow-sm">
+      <div class="container d-flex justify-content-between align-items-center py-2">
+        <div class="small d-none d-md-flex align-items-center text-white">
+          <div class="me-3"><i class="bi bi-geo-alt-fill text-warning me-1"></i> Kab. Ciamis, Jawa Barat</div>
+          <div class="opacity-50 me-3">|</div>
+          <div>
+            <i class="bi bi-calendar3 me-1"></i>
+            <span id="current-date"></span>
+          </div>
+        </div>
+
+        <div class="small d-flex gap-3">
+          <a href="#" class="text-white text-decoration-none opacity-75 hover-opacity-100"> <i class="bi bi-envelope"></i> Webmail </a>
+          <a href="#" class="text-white text-decoration-none opacity-75 hover-opacity-100"> <i class="bi bi-lock"></i> Admin </a>
+        </div>
+      </div>
+
+      <!-- Running Text -->
+      <div class="running-text-container py-1">
+        <div class="container overflow-hidden">
+          <div class="running-text small d-flex align-items-center text-white">
+            <span class="badge bg-warning text-dark me-3">INFO</span>
+            <marquee scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+              <i class="bi bi-megaphone-fill me-2 text-warning"></i>
+              Update Data GTK Semester 1 berakhir 31 Agustus. Segera lakukan sinkronisasi Dapodik! &nbsp;&nbsp;|&nbsp;&nbsp; Layanan PPDB Online dibuka mulai 25 Juni. Ikuti panduan di menu Layanan.
+            </marquee>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-xl sticky-top">
+      <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="./assets/cropped-LOGO-WEB-DISDIK-CIAMIS-UPDATE-JUNI.png" alt="Logo Disdik" width="65" height="auto" class="me-3" />
+          <div class="lh-1 border-start border-2 border-ciamis ps-3">
+            <span class="fw-bold d-block fs-5 text-purple" style="letter-spacing: -0.5px"> DINAS PENDIDIKAN </span>
+            <small class="text-muted fw-bold" style="font-size: 0.7rem; letter-spacing: 1.5px"> KABUPATEN CIAMIS </small>
+          </div>
+        </a>
+
+        <!-- Toggler -->
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="bi bi-list fs-1 text-purple"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-xl-center text-uppercase">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Beranda</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profil</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Sejarah Dinas</a></li>
+                <li><a class="dropdown-item" href="#">Visi & Misi</a></li>
+                <li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Pejabat Dinas</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Data</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Data Sekolah</a></li>
+                <li><a class="dropdown-item" href="#">Data Siswa</a></li>
+                <li><a class="dropdown-item" href="#">Sarana Prasarana</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-bold" data-bs-toggle="dropdown">GTK</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Info Kepegawaian</a></li>
+                <li><a class="dropdown-item" href="#">Sertifikasi Guru</a></li>
+                <li><a class="dropdown-item" href="#">Analisis Kebutuhan</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Layanan</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">PPDB Online</a></li>
+                <li><a class="dropdown-item" href="#">Izin Operasional</a></li>
+                <li><a class="dropdown-item" href="#">Pengaduan</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item ms-xl-3 mt-3 mt-xl-0">
+              <a href="#" class="btn btn-search-nav btn-sm rounded-pill px-4 fw-bold shadow-sm"> <i class="bi bi-search me-1"></i> Cari </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- ================= HERO SECTION ================= -->
+    <header class="hero-section text-center text-white">
+      <div class="particle" style="width: 100px; height: 100px; top: 10%; left: 5%"></div>
+      <div class="particle" style="width: 150px; height: 150px; bottom: 20%; right: 10%"></div>
+
+      <div class="container position-relative" style="z-index: 10">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="d-inline-block custom-badge px-4 py-2 rounded-pill mb-4 shadow-sm animate__animated animate__fadeInDown"><i class="bi bi-patch-check-fill me-2"></i> Good Governance Portal</div>
+
+            <h1 class="hero-title fw-bolder mb-4 animate__animated animate__zoomIn">
+              Mewujudkan Pendidikan Ciamis yang <br />
+              <span class="text-warning">Berkualitas</span> & <span class="text-warning">Berkarakter</span>
+            </h1>
+
+            <p class="lead mb-5 opacity-75 mx-auto fs-5 fw-light animate__animated animate__fadeIn animate__delay-1s" style="max-width: 800px">
+              Satu pintu untuk seluruh layanan pendidikan Tatar Galuh. Transparan, Akuntabel, dan Terintegrasi untuk masa depan generasi gemilang.
+            </p>
+
+            <div class="d-flex justify-content-center gap-4 flex-wrap animate__animated animate__fadeInUp animate__delay-1s">
+              <a href="#layanan" class="btn btn-warning fw-bold btn-lg px-5 shadow-lg rounded-pill hover-lift py-3"> <i class="bi bi-grid-fill me-2"></i> Layanan Digital </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-light pb-5 pt-1">
+      <div class="container">
+        <div class="card kadis-card p-4 p-md-5 text-center shadow-lg border-0">
+          <div class="kadis-img-wrapper">
+            <img src="./assets/Untitled-design-5-768x768.png" alt="Kepala Dinas" class="kadis-img" />
+          </div>
+
+          <div class="mt-2">
+            <h4 class="fw-bold text-dark mb-1">Dr. H. Nama Kepala Dinas, M.Pd.</h4>
+            <p class="text-purple small text-uppercase fw-bold ls-2 mb-4">Kepala Dinas Pendidikan Kab. Ciamis</p>
+
+            <div class="position-relative">
+              <p class="fst-italic text-secondary fs-5 px-lg-5 lh-base">
+                "Selamat datang di portal resmi Dinas Pendidikan Kabupaten Ciamis. Website ini adalah perwujudan komitmen kami untuk menghadirkan pelayanan publik yang cepat, tepat, dan transparan bagi kemajuan pendidikan di Bumi Galuh."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 stat-section overflow-hidden">
+      <div class="container position-relative">
+        <div class="text-center mb-5">
+          <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill fw-bold mb-3 uppercase shadow-sm">DATA TERKINI</span>
+          <h2 class="fw-bold text-purple display-6">Statistik Pendidikan</h2>
+          <p class="text-muted">Gambaran umum data pendidikan di Kabupaten Ciamis</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card p-4 text-center shadow-sm h-100">
+              <div class="stat-icon-box">
+                <i class="bi bi-building fs-2"></i>
+              </div>
+              <h2 class="fw-bold counter" data-target="850">0</h2>
+              <p class="stat-label mb-0">Sekolah</p>
+              <small class="text-muted">Negeri & Swasta</small>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card p-4 text-center shadow-sm h-100">
+              <div class="stat-icon-box">
+                <i class="bi bi-people-fill fs-2"></i>
+              </div>
+              <h2 class="fw-bold counter" data-target="124500">0</h2>
+              <p class="stat-label mb-0">Peserta Didik</p>
+              <small class="text-muted">Total Seluruh Jenjang</small>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card p-4 text-center shadow-sm h-100">
+              <div class="stat-icon-box">
+                <i class="bi bi-person-badge-fill fs-2"></i>
+              </div>
+              <h2 class="fw-bold counter" data-target="8200">0</h2>
+              <p class="stat-label mb-0">Guru & Tendik</p>
+              <small class="text-muted">Tenaga Kependidikan</small>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card p-4 text-center shadow-sm h-100">
+              <div class="stat-icon-box">
+                <i class="bi bi-trophy-fill fs-2"></i>
+              </div>
+              <h2 class="fw-bold counter" data-target="145">0</h2>
+              <p class="stat-label mb-0">Prestasi</p>
+              <small class="text-muted">Tahun Ajaran 2024/2025</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="#" class="btn btn-purple px-4 py-2 rounded-pill shadow-sm fw-bold"> Eksplor Data Open Data <i class="bi bi-arrow-right ms-2"></i> </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="layanan" class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="mb-4">
+              <h2 class="fw-bold mb-1">Layanan Publik Digital</h2>
+              <div class="section-title-line"></div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="d-flex p-4 bg-white rounded-4 service-card align-items-center shadow-sm">
+                  <div class="service-icon-wrapper me-3">
+                    <i class="bi bi-laptop"></i>
+                  </div>
+                  <div>
+                    <h5 class="fw-bold mb-1">PPDB Online</h5>
+                    <p class="small text-muted mb-0">Pendaftaran Peserta Didik Baru</p>
+                    <a href="#" class="stretched-link"></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="d-flex p-4 bg-white rounded-4 service-card align-items-center shadow-sm">
+                  <div class="service-icon-wrapper me-3">
+                    <i class="bi bi-file-earmark-check"></i>
+                  </div>
+                  <div>
+                    <h5 class="fw-bold mb-1">E-Ijazah & Legalisir</h5>
+                    <p class="small text-muted mb-0">Verifikasi dokumen digital</p>
+                    <a href="#" class="stretched-link"></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="d-flex p-4 bg-white rounded-4 service-card align-items-center shadow-sm">
+                  <div class="service-icon-wrapper me-3">
+                    <i class="bi bi-building-check"></i>
+                  </div>
+                  <div>
+                    <h5 class="fw-bold mb-1">Izin Operasional</h5>
+                    <p class="small text-muted mb-0">Perizinan pendirian sekolah</p>
+                    <a href="#" class="stretched-link"></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="d-flex p-4 bg-white rounded-4 service-card align-items-center shadow-sm">
+                  <div class="service-icon-wrapper me-3">
+                    <i class="bi bi-chat-square-text"></i>
+                  </div>
+                  <div>
+                    <h5 class="fw-bold mb-1">Layanan Pengaduan</h5>
+                    <p class="small text-muted mb-0">Sampaikan aspirasi & laporan</p>
+                    <a href="#" class="stretched-link"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4" id="gtk">
+            <div class="gtk-portal-card p-4 rounded-4 shadow-sm border-top border-4 border-warning h-100 bg-white">
+              <div class="d-flex align-items-center mb-4">
+                <div class="bg-purple text-white p-2 rounded-3 me-3">
+                  <i class="bi bi-person-workspace fs-4"></i>
+                </div>
+                <div>
+                  <h4 class="fw-bold mb-0 text-dark">Portal GTK</h4>
+                  <small class="text-muted">Khusus Pendidik</small>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column gap-2">
+                <a href="#" class="gtk-btn"> <i class="bi bi-check-circle-fill me-3"></i> Cek Info GTK </a>
+                <a href="#" class="gtk-btn"> <i class="bi bi-cash-coin me-3"></i> Info Tunjangan Profesi </a>
+                <a href="#" class="gtk-btn"> <i class="bi bi-graph-up-arrow me-3"></i> Pengajuan Kenaikan Pangkat </a>
+                <a href="#" class="gtk-btn"> <i class="bi bi-people me-3"></i> Mutasi Guru & Staf </a>
+              </div>
+
+              <div class="mt-4 p-3 bg-light rounded-4 border border-dashed text-center">
+                <p class="small fw-bold text-secondary mb-2">Kendala Login atau Data?</p>
+                <a href="#" class="btn btn-success w-100 rounded-pill py-2 shadow-sm"> <i class="bi bi-whatsapp me-2"></i> Hubungi Helpdesk </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 transparency-section border-top border-bottom">
+      <div class="container">
+        <div class="row align-items-end mb-4">
+          <div class="col-md-8">
+            <div class="d-flex align-items-center mb-2">
+              <div class="bg-purple rounded-pill me-2" style="width: 4px; height: 24px"></div>
+              <h5 class="fw-bold text-dark mb-0">Transparansi & Akuntabilitas</h5>
+            </div>
+            <p class="text-muted mb-0 ps-3 border-start">Akses cepat dokumen publik dan laporan resmi kedinasan.</p>
+          </div>
+          <div class="col-md-4 text-md-end mt-3 mt-md-0">
+            <a href="/arsip-dokumen" class="btn btn-purple btn-all-docs shadow-sm"> Lihat Semua Dokumen <i class="bi bi-arrow-right ms-2"></i> </a>
+          </div>
+        </div>
+
+        <div class="doc-grid">
+          <a href="#" class="doc-card shadow-sm">
+            <div class="icon-box">
+              <i class="bi bi-file-earmark-pdf"></i>
+            </div>
+            <div class="doc-info">
+              <span class="doc-name">RENSTRA 2024-2029</span>
+              <span class="doc-meta">PDF • 2.4 MB</span>
+            </div>
+          </a>
+
+          <a href="#" class="doc-card shadow-sm">
+            <div class="icon-box">
+              <i class="bi bi-file-earmark-pdf"></i>
+            </div>
+            <div class="doc-info">
+              <span class="doc-name">LAKIP Tahun 2024</span>
+              <span class="doc-meta">PDF • 1.8 MB</span>
+            </div>
+          </a>
+
+          <a href="#" class="doc-card shadow-sm">
+            <div class="icon-box">
+              <i class="bi bi-file-earmark-pdf"></i>
+            </div>
+            <div class="doc-info">
+              <span class="doc-name">DPA Perubahan</span>
+              <span class="doc-meta">PDF • 3.1 MB</span>
+            </div>
+          </a>
+
+          <a href="#" class="doc-card shadow-sm">
+            <div class="icon-box">
+              <i class="bi bi-file-earmark-pdf"></i>
+            </div>
+            <div class="doc-info">
+              <span class="doc-name">Neraca Pendidikan</span>
+              <span class="doc-meta">PDF • 4.5 MB</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="berita" class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-8">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div>
+                <h3 class="fw-bold mb-1" style="color: var(--primary-ciamis)">Kabar Pendidikan</h3>
+                <div style="width: 60px; height: 5px; background: var(--accent-warning); border-radius: 10px"></div>
+              </div>
+              <a href="#" class="btn btn-purple rounded-pill px-4 fw-bold btn-sm"> Lihat Semua <i class="bi bi-arrow-right ms-1"></i> </a>
+            </div>
+
+            <div class="row g-4">
+              <div class="col-12">
+                <div class="card news-card border-0 shadow-sm overflow-hidden">
+                  <div class="row g-0">
+                    <div class="col-md-5 img-wrapper">
+                      <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1470" class="main-news-img w-100" alt="Berita Utama" />
+                    </div>
+                    <div class="col-md-7 d-flex align-items-center">
+                      <div class="card-body p-4">
+                        <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill"><i class="bi bi-fire me-1"></i> TERKINI</span>
+                        <h4 class="fw-bold mb-3">
+                          <a href="#" class="news-title-link text-decoration-none text-dark hover-primary">Dinas Pendidikan Ciamis Luncurkan Program "Sakola Motekar"</a>
+                        </h4>
+                        <p class="text-muted small mb-4">Meningkatkan mutu pendidikan karakter berbasis budaya lokal melalui inovasi kurikulum terbaru...</p>
+                        <div class="d-flex align-items-center text-muted small">
+                          <img src="https://ui-avatars.com/api/?name=Admin+Disdik&background=0052a3&color=fff" class="rounded-circle me-2" width="24" />
+                          <span>Admin • 22 Des 2025</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="card news-card border-0 shadow-sm h-100 p-3">
+                  <div class="img-wrapper rounded-4 mb-3">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1470" class="sub-news-img" alt="Prestasi" />
+                  </div>
+                  <div class="card-body p-0">
+                    <small class="text-warning fw-bold text-uppercase">Prestasi</small>
+                    <h5 class="fw-bold mt-2">
+                      <a href="#" class="news-title-link text-decoration-none">Siswa SD Ciamis Raih Emas OSN Tingkat Nasional</a>
+                    </h5>
+                    <p class="text-muted small">Putra daerah kembali mengharumkan nama Ciamis di kancah nasional...</p>
+                  </div>
+                  <div class="mt-3 pt-3 border-top d-flex justify-content-between text-muted small">
+                    <span><i class="bi bi-calendar3 me-1"></i> 20 Des 2025</span>
+                    <span><i class="bi bi-eye me-1"></i> 1.2k</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="card news-card border-0 shadow-sm h-100 p-3">
+                  <div class="img-wrapper rounded-4 mb-3">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1470" class="sub-news-img" alt="Kepegawaian" />
+                  </div>
+                  <div class="card-body p-0">
+                    <small class="text-warning fw-bold text-uppercase">Kepegawaian</small>
+                    <h5 class="fw-bold mt-2">
+                      <a href="#" class="news-title-link text-decoration-none">Jadwal Pemberkasan PPPK Tahap 2</a>
+                    </h5>
+                    <p class="text-muted small">Panduan lengkap alur pemberkasan bagi calon ASN PPPK tahun ini...</p>
+                  </div>
+                  <div class="mt-3 pt-3 border-top d-flex justify-content-between text-muted small">
+                    <span><i class="bi bi-calendar3 me-1"></i> 18 Des 2025</span>
+                    <span><i class="bi bi-eye me-1"></i> 850</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="mb-4 d-flex align-items-center justify-content-between">
+              <h4 class="fw-bold m-0" style="color: var(--primary-ciamis)"><i class="bi bi-calendar3-event me-2 text-warning"></i>Agenda</h4>
+            </div>
+
+            <div class="agenda-box shadow-sm border-0 overflow-hidden">
+              <div class="list-group list-group-flush">
+                <div class="list-group-item agenda-item p-4 border-bottom">
+                  <div class="d-flex align-items-center">
+                    <div class="date-badge rounded-4 me-3">
+                      <div class="fw-bold fs-4 text-purple">25</div>
+                      <div class="small text-muted fw-bold text-uppercase" style="font-size: 0.6rem; letter-spacing: 0.5px">DES</div>
+                    </div>
+
+                    <div class="flex-grow-1">
+                      <h6 class="mb-1 fw-bold text-dark lh-base">Rapat Koordinasi Pengelolaan Dana BOS 2026</h6>
+                      <div class="small text-muted d-flex gap-3">
+                        <span><i class="bi bi-geo-alt me-1 text-danger"></i>Aula Disdik</span>
+                        <span><i class="bi bi-clock me-1 text-purple"></i>09:00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="list-group-item agenda-item p-4 border-bottom">
+                  <div class="d-flex align-items-center">
+                    <div class="date-badge rounded-4 me-3">
+                      <div class="fw-bold fs-4 text-purple">28</div>
+                      <div class="small text-muted fw-bold text-uppercase" style="font-size: 0.6rem; letter-spacing: 0.5px">DES</div>
+                    </div>
+
+                    <div class="flex-grow-1">
+                      <h6 class="mb-1 fw-bold text-dark lh-base">Sosialisasi Implementasi Kurikulum Merdeka</h6>
+                      <div class="small text-muted d-flex gap-3">
+                        <span><i class="bi bi-geo-alt me-1 text-danger"></i>Hotel Tyara</span>
+                        <span><i class="bi bi-clock me-1 text-purple"></i>08:00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3 bg-white text-center">
+                <a href="#" class="text-purple fw-bold text-decoration-none small"> Buka Kalender Pendidikan <i class="bi bi-arrow-right ms-1"></i> </a>
+              </div>
+            </div>
+
+            <div class="mt-4 card border-0 rounded-4 bg-purple text-white p-4">
+              <div class="d-flex align-items-center">
+                <div class="me-3 fs-1"><i class="bi bi-info-circle"></i></div>
+                <div>
+                  <h6 class="fw-bold mb-1">Layanan Pengaduan</h6>
+                  <p class="small mb-0 opacity-75">Sampaikan saran & kritik anda melalui portal resmi kami.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="partner-section border-top">
+      <div class="container text-center">
+        <h6 class="fw-bold mb-5 text-muted text-uppercase ls-2" style="font-size: 0.85rem">
+          <span class="px-3 bg-white">Aplikasi & Mitra Terkait</span>
+        </h6>
+
+        <div class="partner-container">
+          <a href="#" class="partner-link" title="Kemdikbud">
+            <img src="./assets/CASCADING.png" alt="Kemdikbud" class="partner-logo" loading="lazy" />
+          </a>
+
+          <a href="#" class="partner-link" title="Dapodik">
+            <img src="./assets/Gambar-WhatsApp-2023-01-18-pukul-19.41.23.jpg" alt="Dapodik" class="partner-logo" loading="lazy" />
+          </a>
+
+          <a href="#" class="partner-link" title="Pemprov Jabar">
+            <img src="./assets/logo-header-latihan.png" alt="Pemprov Jabar" class="partner-logo" loading="lazy" />
+          </a>
+
+          <a href="#" class="partner-link" title="Pemkab Ciamis">
+            <img src="./assets/POHON-KINERJA.png" alt="Pemkab Ciamis" class="partner-logo" loading="lazy" />
+          </a>
+
+          <!-- <a href="#" class="partner-link" title="Merdeka Belajar">
+            <img src="https://via.placeholder.com/150x60/ffffff/0052a3?text=MERDEKA+BELAJAR" alt="Merdeka Belajar" class="partner-logo" loading="lazy" />
+          </a> -->
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container pb-5">
+        <div class="row g-5">
+          <div class="col-lg-4 col-md-12">
+            <div class="mb-4">
+              <img src="./assets/cropped-LOGO-WEB-DISDIK-CIAMIS-UPDATE-JUNI.png" alt="Logo Disdik Ciamis" width="180" height="auto" loading="lazy" />
+            </div>
+            <h4 class="footer-title fw-bold mb-3">Dinas Pendidikan<br />Kabupaten Ciamis</h4>
+            <p class="footer-subtitle mb-4">
+              Jl. Siliwangi No. XX, Ciamis, Jawa Barat.<br />
+              Memberikan pelayanan prima untuk mewujudkan pendidikan yang berkualitas di Bumi Galuh.
+            </p>
+            <div class="d-flex gap-2 mt-4">
+              <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
+              <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6">
+            <h6 class="text-white text-uppercase fw-bold footer-section-title">Profil</h6>
+            <ul class="list-unstyled small">
+              <li class="mb-3"><a href="#" class="footer-link">Tentang Kami</a></li>
+              <li class="mb-3"><a href="#" class="footer-link">Visi & Misi</a></li>
+              <li class="mb-3"><a href="#" class="footer-link">Struktur Organisasi</a></li>
+              <li class="mb-3"><a href="#" class="footer-link">Profil Pejabat</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6">
+            <h6 class="text-white text-uppercase fw-bold footer-section-title">Tautan</h6>
+            <ul class="list-unstyled small">
+              <li class="mb-3"><a href="#" class="footer-link">Dapodikdasmen</a></li>
+              <li class="mb-3"><a href="#" class="footer-link">Info GTK</a></li>
+              <li class="mb-3"><a href="#" class="footer-link">Portal Ciamis</a></li>
+              <li class="mb-3"><a href="#" class="footer-link">PPID Disdik</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-12">
+            <h6 class="text-white text-uppercase fw-bold footer-section-title">Peta Lokasi</h6>
+            <div class="map-container ratio ratio-21x9 mb-3">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15832.2272204739!2d108.35!3d-7.32!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f5ea6aaaaaaab%3A0x627d3976378e90e7!2sDinas%20Pendidikan%20Kabupaten%20Ciamis!5e0!3m2!1sid!2sid!4v1620000000000"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div class="text-secondary small">
+              <div class="d-flex align-items-center mb-2"><i class="bi bi-telephone-fill me-3 text-warning"></i> (0265) 771xxx</div>
+              <div class="d-flex align-items-center"><i class="bi bi-envelope-fill me-3 text-warning"></i> disdik@ciamiskab.go.id</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer-bottom py-4">
+        <div class="container">
+          <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2 text-center">
+            <small class="footer-text">
+              <span class="fw-bold text-white"> © 2025 Dinas Pendidikan Kabupaten Ciamis </span>
+            </small>
+
+            <span class="footer-separator d-none d-md-inline">|</span>
+
+            <small class="footer-links">
+              <a href="#" class="footer-link">Lisensi Konten</a>
+              <span class="mx-1">•</span>
+              <a href="#" class="footer-link">Kebijakan Privasi</a>
+            </small>
+          </div>
+        </div>
+      </footer>
+    </footer>
+
+    <button type="button" class="btn shadow-lg" id="btn-back-to-top" title="Kembali ke Atas">
+      <i class="bi bi-arrow-up-short" style="font-size: 1.5rem; -webkit-text-stroke: 1px"></i>
+    </button>
+
+    <!-- Defer non-critical JS to reduce render-blocking -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Inline small script kept but wrapped to run after DOMContentLoaded for safety -->
+    <script src="./dist/js/custom.js"></script>
+  </body>
+</html>
